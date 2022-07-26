@@ -18,7 +18,7 @@ pub mod anchor_chess {
     }
 
     pub fn make_move(
-      ctx: Context<Play>,
+      ctx: Context<MakeMove>,
       piece: ChessPiece,
       move_to: Move) -> Result<()> {
         ctx.accounts.game.make_move(piece, move_to)
@@ -137,7 +137,7 @@ pub struct SetupGame<'info> {
 }
 
 #[derive(Accounts)]
-pub struct Play<'info> {
+pub struct MakeMove<'info> {
   #[account(mut)]
   pub game:  Account<'info, ChessGame>,
   pub player: Signer<'info>,

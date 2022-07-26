@@ -66,7 +66,7 @@ describe("anchor-chess", async () => {
   it("Next Move ", async () => {
     let thePiece = {team: 0, pieceType: {knight:{}}, xLoc: 0, yLoc: 1};
     let theMove =  {x: 2, y: 2};
-    await program.methods.play(thePiece, theMove)
+    await program.methods.makeMove(thePiece, theMove)
     .accounts({
       game: gameKey.publicKey,
     })
@@ -78,7 +78,7 @@ describe("anchor-chess", async () => {
   it("Next Move ", async () => {
     let thePiece = {team: 1, pieceType: {knight:{}}, xLoc: 7, yLoc: 1};
     let theMove =  {x: 5, y: 2};
-    await program.methods.play(thePiece, theMove)
+    await program.methods.makeMove(thePiece, theMove)
     .accounts({
       game: gameKey.publicKey,
     })
@@ -90,7 +90,7 @@ describe("anchor-chess", async () => {
   it("Next Move ", async () => {
     let thePiece = {team: 0, pieceType: {knight:{}}, xLoc: 0, yLoc: 6};
     let theMove =  {x: 2, y: 5};
-    await program.methods.play(thePiece, theMove)
+    await program.methods.makeMove(thePiece, theMove)
     .accounts({
       game: gameKey.publicKey,
     })
@@ -103,7 +103,7 @@ describe("anchor-chess", async () => {
   it("Next Move ", async () => {
     let thePiece = {team: 1, pieceType: {pawn:{}}, xLoc: 6, yLoc: 4};
     let theMove =  {x: 4, y: 4};
-    await program.methods.play(thePiece, theMove)
+    await program.methods.makeMove(thePiece, theMove)
     .accounts({
       game: gameKey.publicKey,
     })
